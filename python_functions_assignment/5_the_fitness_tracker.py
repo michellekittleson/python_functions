@@ -9,27 +9,36 @@ Task 2: Write a simple function that estimates calories burned based on the acti
 Task 3: Create a summary function that provides a report of all activities and total calories burned for the day.
 
 '''
-total_calories = 0
 
-def log_fitness_activities():
-    activity = input("Enter the activity (dancing, swimming, biking): ")
-    if activity == "dancing":
-        time_dancing = int(input("How many minutes did you dance? "))
-        dancing_calories = time_dancing * 7
-        total_calories += dancing_calories
-        print(f"Congratulations! You have burned {dancing_calories} calories dancing!")
-    elif activity == "swimming":
-        time_swimming = int(input("How many minutes did you swim? "))
-        swimming_calories = time_swimming * 6
-        total_calories += swimming_calories
-        print(f"Congratulations! You have burned {swimming_calories} calories swimming!")
+activities = []
+duration = []
+calories = []
 
-log_fitness_activities()
+def log_fitness_activities(activities, duration):
 
-def calories_burned():
-    pass
-def summary():
-    pass
+    while True:
+        activity = input("Enter the activity (dancing, swimming, biking): ")
+        minutes = input("How long are you doing the activity in minutes? ")
+        activities.append(activity)
+        duration.append(minutes)
+        if len(activities) >= 3:
+            break
+        print(activities)
+        print(duration)
+
+def calories_burned(calories):
+    for time in duration:
+        calories.append(int(time) * 3.5)
+
+def summary(activities, duration, calories):
+    for i in range(len(activities)):
+        print(f"{activities[i]} burned {calories[i]} over {duration[i]} minutes.")
+
+log_fitness_activities(activities, duration)
+calories_burned(calories)
+summary(activities, duration, calories)
+
+
 
 activities = ['Dancing', 'Swimming', 'Biking']
 duration = [10, 20, 15]

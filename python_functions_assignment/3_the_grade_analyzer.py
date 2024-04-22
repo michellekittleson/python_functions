@@ -38,14 +38,16 @@ letter_grade()
 
 # Need help with this part
 
-for grade in individual_grades:
-    if grade >= 90:
-        print("A")
-    elif grade >= 80:
-        print("B")
-    elif grade >= 70:
-        print("C")
-    elif grade >= 60:
-        print("D")
-    else:
-        print("F")
+def letter_grade(grades):
+    for grade in grades:
+        if grade >= 90:
+            print("A")
+        elif grade >= 80:
+            print("B")
+        elif grade >= 70:
+            print("C")
+        elif grade >= 60:
+            print("D")
+        else:
+            print("F")
+letter_grade(individual_grades)
